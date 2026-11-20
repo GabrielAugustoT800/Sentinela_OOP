@@ -14,8 +14,6 @@ e a **central** que analisa as leituras e emite alertas classificados por severi
 - **Repositório:** `https://github.com/GabrielAugustoT800/Sentinela_OOP`
 - **Disciplina:** Object-Oriented Programming — Challenge Nuclear Sentinel (AMAZUL)
 
-> Substitua os dados acima pelos nomes/RM reais da equipe e pelo link do repositório antes de enviar.
-
 ## Escopo da Sprint 1
 
 Nesta sprint, a "IA" é o motor de regras da central: `CentralMonitoramento.analisarLeituras()` percorre os
@@ -298,4 +296,4 @@ câmera), dispositivos fora de operação e validações do drone.
 - [x] **Entrega:** os três cenários executados na ordem pelo `main`, com leituras e alertas impressos.
 - [x] **Reflexão:** as 6 perguntas do enunciado respondidas.
 - [x] **Testes:** 40 testes unitários (JUnit 5).
-- [ ] **Entrega:** repositório GitHub publicado e linkado neste README (preencher antes de enviar).
+- [x] **Entrega:** repositório GitHub publicado e linkado neste README (`https://github.com/GabrielAugustoT800/Sentinela_OOP`).
