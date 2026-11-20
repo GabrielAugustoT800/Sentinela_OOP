@@ -10,11 +10,11 @@ e a **central** que analisa as leituras e emite alertas classificados por severi
 ## Equipe e entrega
 
 - **Turma:** 2CCP
-- **Integrantes:** ` (RM000000)`, `Nome 2 (RM000000)`
+- **Integrantes:** `Gabriel Augusto (RM: 567057)`, `Lucas Koiti (RM: 568128)`, `Lucas Morio (RM: 567616)`
 - **Repositório:** `https://github.com/GabrielAugustoT800/Sentinela_OOP`
 - **Disciplina:** Object-Oriented Programming — Challenge Nuclear Sentinel (AMAZUL)
 
-> Substitua apenas os nomes/RM acima pelos dados reais da equipe antes de enviar.
+> Substitua os dados acima pelos nomes/RM reais da equipe e pelo link do repositório antes de enviar.
 
 ## Escopo da Sprint 1
 
@@ -256,4 +256,4 @@ câmera), dispositivos fora de operação e validações do drone.
 - [x] **Entrega:** os três cenários executados na ordem pelo `main`, com leituras e alertas impressos.
 - [x] **Reflexão:** as 6 perguntas do enunciado respondidas.
 - [x] **Testes:** 40 testes unitários (JUnit 5).
-- [x] **Entrega:** repositório GitHub publicado e linkado neste README (`https://github.com/GabrielAugustoT800/Sentinela_OOP`).
+- [ ] **Entrega:** repositório GitHub publicado e linkado neste README (preencher antes de enviar).
