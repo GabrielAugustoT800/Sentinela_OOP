@@ -47,6 +47,48 @@ Em IDE (IntelliJ/Eclipse/VS Code): abra a pasta, marque `src` como *Sources*, `t
 e use a aba **Testing** para rodar os testes (JUnit 5). Se não tiver Maven instalado, a IDE executa os testes
 diretamente.
 
+### Testes sem Maven (JUnit Platform Console)
+
+Se você não tiver Maven, rode os testes com o `junit-platform-console-standalone` (Java 17+). Baixe o jar
+uma vez:
+
+```powershell
+Invoke-WebRequest -UseBasicParsing -Uri "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.2/junit-platform-console-standalone-1.10.2.jar" -OutFile "junit-platform-console-standalone-1.10.2.jar"
+```
+
+Compile o código principal e os testes:
+
+```powershell
+$jar = "junit-platform-console-standalone-1.10.2.jar"
+
+javac -encoding UTF-8 -d out src\Main.java src\modelo\*.java src\servico\*.java
+
+$tests = (Get-ChildItem test -Recurse -Filter *.java | ForEach-Object { $_.FullName })
+javac -encoding UTF-8 -cp "out;$jar" -d out-test $tests
+```
+
+Execute todos os testes ou filtre por pacote/classe:
+
+```powershell
+$jar = "junit-platform-console-standalone-1.10.2.jar"
+
+# todos os 40 testes
+java -jar $jar execute --class-path "out;out-test" --scan-classpath out-test --details=tree --disable-banner
+
+# somente o pacote modelo (37 testes)
+java -jar $jar execute --class-path "out;out-test" --select-package modelo --details=summary --disable-banner
+
+# somente o pacote servico (3 testes)
+java -jar $jar execute --class-path "out;out-test" --select-package servico --details=summary --disable-banner
+
+# uma classe específica
+java -jar $jar execute --class-path "out;out-test" --select-class modelo.ZonaRestritaTest --details=tree --disable-banner
+```
+
+> É necessário ter `java` e `javac` (JDK 17+) no `PATH`. No VS Code, o JDK baixado pela extensão Java fica em
+> `%USERPROFILE%\.vscode\extensions\redhat.java-*\jre\*\bin`. Em Linux/macOS, troque o separador `;` do
+> `--class-path` por `:`.
+
 ## Estrutura
 
 ```text

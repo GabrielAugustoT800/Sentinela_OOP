@@ -1,5 +1,6 @@
 out/
 out-test/
+junit-platform-console-standalone-*.jar
 target/
 *.class
 .idea/
