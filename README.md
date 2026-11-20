@@ -272,28 +272,3 @@ Cobrem todas as sugestões do enunciado:
 
 Além disso: fronteiras das faixas, leitura absurda/`NaN`, alertas da central (radiação, perímetro, drone +
 câmera), dispositivos fora de operação e validações do drone.
-
-## Checklist do enunciado
-
-- [x] **Classes e objetos:** `ZonaRestrita` com `identificador`, `descricao`, `limiteRadiacao` e `nivelRadiacaoAtual`.
-- [x] **Classes e objetos:** duas zonas obrigatórias (`ZNR-01` Casa do Reator e `ZNR-02` Pátio de Armazenamento
-  de Combustível Irradiado) criadas na montagem do cenário (`Main.Instalacao`, chamada por `main()`).
-- [x] **Construtores:** `ZonaRestrita(identificador, descricao, limiteRadiacao)`; `new ZonaRestrita()` não compila.
-- [x] **Métodos:** `registrarLeituraRadiacao` e `classificarRisco` implementados.
-- [x] **Encapsulamento:** `nivelRadiacaoAtual` privado; leitura negativa, `NaN` e acima de 1.000.000 µSv/h
-  rejeitadas, mantendo o último valor válido.
-- [x] **Associação:** `DispositivoMonitoramento` com `codigoIdentificador`, `localizacao` e `emOperacao`.
-- [x] **Associação:** `AlertaSeguranca` com `sensorOrigem`, `zonaAfetada`, `severidade` e `mensagem`.
-- [x] **Associação:** `CentralMonitoramento` com a coleção de dispositivos e `analisarLeituras()` (motor de regras).
-- [x] **Associação:** `getSensorOrigem()` devolve a mesma referência do sensor que gerou o alerta.
-- [x] **Herança:** `SensorRadiacao`, `SensorPerimetral` e `DronePatrulha` herdam de `DispositivoMonitoramento`
-  via `super()`.
-- [x] **Herança:** as três filhas herdam `getCodigoIdentificador()` sem reescrevê-lo.
-- [x] **Herança:** `DronePatrulha` TEM UMA câmera (composição), não É UM `SensorRadiacao`.
-- [x] **Cenário 1:** rotina normal, com leituras dentro dos limites, perímetro íntegro e drone sem detecção.
-- [x] **Cenário 2:** pico de radiação com alerta `CRITICO` emitido pela central.
-- [x] **Cenário 3:** acesso indevido, com drone enviado e câmera simulada confirmando veículo não identificado.
-- [x] **Entrega:** os três cenários executados na ordem pelo `main`, com leituras e alertas impressos.
-- [x] **Reflexão:** as 6 perguntas do enunciado respondidas.
-- [x] **Testes:** 40 testes unitários (JUnit 5).
-- [x] **Entrega:** repositório GitHub publicado e linkado neste README (`https://github.com/GabrielAugustoT800/Sentinela_OOP`).
